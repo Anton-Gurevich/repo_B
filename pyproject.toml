@@ -1,22 +1,22 @@
 [build-system]
 requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
-description = "Example for a shared module 'Repository A'"
 
 [project]
 name = "repo-B"
 version = "0.1.0"
 requires-python = ">=3.10"
-dependencies = []
-
-[tool.setuptools.packages.find]
-where = ["src"]
-
+description = "Example for a shared module 'Repository A'"
 dependencies = [
     "numpy",
     "natsort",
     "pandas",
 ]
+
+[tool.setuptools]
+# Use src/ layout and expose the single module "main"
+package-dir = {"" = "src"}
+py-modules = ["main"]
 
 [dependency-groups]
 dev = [
