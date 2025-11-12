@@ -7,18 +7,17 @@ name = "repo-B"
 version = "0.1.0"
 requires-python = ">=3.10"
 description = "Example for a shared module 'Repository A'"
+readme = "README.md"
 dependencies = [
     "numpy",
     "natsort",
     "pandas",
 ]
 
-[tool.setuptools]
-# Use src/ layout and expose the single module "main"
-package-dir = {"" = "src"}
-py-modules = ["main"]
-
-[dependency-groups]
+[project.optional-dependencies]
 dev = [
     "tensorboard",
 ]
+
+[tool.setuptools.packages.find]
+where = ["src"]
