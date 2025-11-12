@@ -11,3 +11,14 @@ dependencies = []
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+dependencies = [
+    "numpy",
+    "natsort",
+    "pandas",
+]
+
+[dependency-groups]
+dev = [
+    "tensorboard",
+]
